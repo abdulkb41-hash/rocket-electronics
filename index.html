@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rocket Electronics</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <h1 class="brand">🚀 Rocket Electronics</h1>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#laptops">Laptops</a>
+                <a href="#desktops">Desktops</a>
+                <a href="#accessories">Accessories</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h2>Best Laptop & Desktop Deals</h2>
+                <p>Shop the latest technology at the best prices.</p>
+                <a href="#laptops" class="btn btn-primary">Shop Now</a>
+            </div>
+        </section>
+
+        <section id="cart" class="section cart-section">
+            <div class="container">
+                <div class="cart-panel">
+                    <div class="cart-header">
+                        <div>
+                            <h2>Shopping Cart</h2>
+                            <p class="cart-count">0 items</p>
+                        </div>
+                        <button id="clearCart" class="btn btn-secondary">Clear Cart</button>
+                    </div>
+                    <ul class="cart-list"></ul>
+                    <div class="cart-summary">
+                        <span>Total</span>
+                        <strong class="cart-total">$0.00</strong>
+                    </div>
+                    <div class="customer-details">
+                        <h3>Customer Details</h3>
+                        <label for="customerName">Full Name</label>
+                        <input id="customerName" type="text" placeholder="John Doe" />
+                        <label for="customerEmail">Email</label>
+                        <input id="customerEmail" type="email" placeholder="you@example.com" />
+                        <label for="customerPhone">Phone</label>
+                        <input id="customerPhone" type="tel" placeholder="(555) 123-4567" />
+                        <label for="customerAddress">Shipping Address</label>
+                        <textarea id="customerAddress" placeholder="Street, city, state, postal code"></textarea>
+                    </div>
+                    <div class="cart-actions">
+                        <button id="checkoutBtn" class="btn btn-primary">Order Place</button>
+                        <p class="cart-message"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="laptops" class="section products-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Top Laptops</h2>
+                    <p>Find high-performance and everyday laptops for every user.</p>
+                </div>
+                <div class="cards-grid">
+                    <article class="card" data-name="Elite Ultrabook" data-price="1199">
+                        <h3>Elite Ultrabook</h3>
+                        <p>Lightweight performance with long battery life and premium display.</p>
+                        <span class="price">$1,199</span>
+                        <button class="btn btn-secondary add-to-cart">Buy Now</button>
+                    </article>
+                    <article class="card" data-name="Gaming Laptop" data-price="1499">
+                        <h3>Gaming Laptop</h3>
+                        <p>Powerful GPU, fast refresh display, and sleek design.</p>
+                        <span class="price">$1,499</span>
+                        <button class="btn btn-secondary add-to-cart">Buy Now</button>
+                    </article>
+                    <article class="card" data-name="Business Laptop" data-price="949">
+                        <h3>Business Laptop</h3>
+                        <p>Reliable productivity machine with security and durability.</p>
+                        <span class="price">$949</span>
+                        <button class="btn btn-secondary add-to-cart">Buy Now</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="desktops" class="section products-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Desktops</h2>
+                    <p>Desktop PCs built for performance, productivity, and gaming.</p>
+                </div>
+                <div class="cards-grid">
+                    <article class="card" data-name="Gaming Desktop" data-price="1299">
+                        <h3>Gaming Desktop</h3>
+                        <p>High-end performance with liquid cooling and RGB lighting.</p>
+                        <span class="price">$1,299</span>
+                        <button class="btn btn-secondary add-to-cart">Buy Now</button>
+                    </article>
+                    <article class="card" data-name="All-in-One" data-price="1099">
+                        <h3>All-in-One</h3>
+                        <p>Space-saving desktop with beautiful display and strong performance.</p>
+                        <span class="price">$1,099</span>
+                        <button class="btn btn-secondary add-to-cart">Buy Now</button>
+                    </article>
+                    <article class="card" data-name="Mini PC" data-price="699">
+                        <h3>Mini PC</h3>
+                        <p>Compact, energy-efficient system for home and office.</p>
+                        <span class="price">$699</span>
+                        <button class="btn btn-secondary add-to-cart">Buy Now</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="accessories" class="section products-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Accessories</h2>
+                    <p>Essential gear to complete your setup.</p>
+                </div>
+                <div class="cards-grid">
+                    <article class="card" data-name="Wireless Mouse" data-price="39">
+                        <h3>Wireless Mouse</h3>
+                        <p>Precision tracking and comfortable design.</p>
+                        <span class="price">$39</span>
+                        <button class="btn btn-secondary add-to-cart">Buy Now</button>
+                    </article>
+                    <article class="card" data-name="Mechanical Keyboard" data-price="89">
+                        <h3>Mechanical Keyboard</h3>
+                        <p>Responsive keys with customizable RGB lighting.</p>
+                        <span class="price">$89</span>
+                        <button class="btn btn-secondary add-to-cart">Buy Now</button>
+                    </article>
+                    <article class="card" data-name="Gaming Headset" data-price="69">
+                        <h3>Gaming Headset</h3>
+                        <p>Clear audio, noise cancellation, and comfort for long sessions.</p>
+                        <span class="price">$69</span>
+                        <button class="btn btn-secondary add-to-cart">Buy Now</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section services-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Service & Repair</h2>
+                    <p>Fast diagnostics, upgrades and maintenance for every machine.</p>
+                </div>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <h3>PC Repair</h3>
+                        <p>Hardware troubleshooting, component replacement, and system recovery.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Upgrade Packages</h3>
+                        <p>Memory, storage, GPU, and cooling upgrades to boost performance.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Maintenance</h3>
+                        <p>Cleaning, virus removal, software tuning, and data backup support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="container contact-grid">
+                <div class="contact-info">
+                    <h2>Contact Us</h2>
+                    <p>Visit our shop or send a request and we will respond quickly.</p>
+                    <ul>
+                        <li><strong>Address:</strong> 123 Tech Avenue, City</li>
+                        <li><strong>Phone:</strong> (555) 123-4567</li>
+                        <li><strong>Email:</strong> sales@techhubpc.com</li>
+                    </ul>
+                </div>
+                <form class="contact-form" id="serviceForm">
+                    <h3>Book a Service</h3>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required />
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+                    <label for="serviceType">Service Type</label>
+                    <select id="serviceType" name="serviceType" required>
+                        <option value="">Select a service</option>
+                        <option value="repair">Computer Repair</option>
+                        <option value="upgrade">Upgrade</option>
+                        <option value="tuning">Maintenance/Tuning</option>
+                    </select>
+
+                    <label for="details">Details</label>
+                    <textarea id="details" name="details" rows="4" placeholder="Describe the issue or request" required></textarea>
+
+                    <button type="submit" class="btn btn-primary">Send Request</button>
+                    <p id="formMessage" class="form-message"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 TechHub PC Shop. Quality sales and service for your computers.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
