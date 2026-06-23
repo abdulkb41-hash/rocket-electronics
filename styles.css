@@ -262,6 +262,19 @@ nav a:hover {
     margin-top: 1.25rem;
 }
 
+/* Admin-specific */
+.admin-panel .contact-form {
+    background: #0b1120;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.admin-panel .card {
+    background: rgba(255,255,255,0.03);
+    border-radius: 12px;
+    padding: 0.75rem;
+}
+
 .cart-message {
     margin: 0;
     color: #a5f3fc;

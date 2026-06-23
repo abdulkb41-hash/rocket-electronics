@@ -12,6 +12,68 @@ const customerAddressInput = document.getElementById('customerAddress');
 const form = document.getElementById('serviceForm');
 const message = document.getElementById('formMessage');
 
+// --- Product management (stored in localStorage) ---
+const DEFAULT_PRODUCTS = [
+  { name: 'Elite Ultrabook', price: 1199, category: 'laptops' },
+  { name: 'Gaming Laptop', price: 1499, category: 'laptops' },
+  { name: 'Business Laptop', price: 949, category: 'laptops' },
+  { name: 'Gaming Desktop', price: 1299, category: 'desktops' },
+  { name: 'All-in-One', price: 1099, category: 'desktops' },
+  { name: 'Mini PC', price: 699, category: 'desktops' },
+  { name: 'Wireless Mouse', price: 39, category: 'accessories' },
+  { name: 'Mechanical Keyboard', price: 89, category: 'accessories' },
+  { name: 'Gaming Headset', price: 69, category: 'accessories' }
+];
+
+function loadProducts() {
+  try {
+    const raw = localStorage.getItem('products');
+    if (!raw) return DEFAULT_PRODUCTS.slice();
+    return JSON.parse(raw);
+  } catch (e) {
+    return DEFAULT_PRODUCTS.slice();
+  }
+}
+
+function saveProducts(products) {
+  localStorage.setItem('products', JSON.stringify(products));
+}
+
+let products = loadProducts();
+
+function renderProducts() {
+  const grids = document.querySelectorAll('.cards-grid[data-category]');
+  grids.forEach(grid => {
+    const category = grid.dataset.category;
+    grid.innerHTML = '';
+    const items = products.filter(p => p.category === category);
+    items.forEach((p) => {
+      const article = document.createElement('article');
+      article.className = 'card';
+      article.dataset.name = p.name;
+      article.dataset.price = String(p.price);
+      article.innerHTML = `
+        <h3>${p.name}</h3>
+        <p>${p.description || ''}</p>
+        <span class="price">$${p.price.toLocaleString()}</span>
+        <button class="btn btn-secondary add-to-cart">Buy Now</button>
+      `;
+      grid.appendChild(article);
+    });
+  });
+}
+
+// initial render
+renderProducts();
+
+// If products changed in another tab (admin), reload and re-render
+window.addEventListener('storage', (e) => {
+  if (e.key === 'products') {
+    products = loadProducts();
+    renderProducts();
+  }
+});
+
 function formatCurrency(value) {
   return `$${value.toFixed(2)}`;
 }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin - Rocket Electronics</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* small override to keep admin compact */
+    .admin-panel { max-width: 900px; margin: 2rem auto; padding: 1rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">🚀 Rocket Electronics — Admin</h1>
+      <nav>
+        <a href="index.html">Store</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container admin-panel">
+      <h2>Manage Products</h2>
+
+      <form id="productForm" class="contact-form">
+        <input type="hidden" id="productIndex" />
+        <label for="productName">Product name</label>
+        <input id="productName" type="text" required />
+
+        <label for="productPrice">Price (USD)</label>
+        <input id="productPrice" type="number" min="0" step="0.01" required />
+
+        <label for="productCategory">Category</label>
+        <select id="productCategory" required>
+          <option value="laptops">Laptops</option>
+          <option value="desktops">Desktops</option>
+          <option value="accessories">Accessories</option>
+        </select>
+
+        <label for="productDescription">Description (optional)</label>
+        <textarea id="productDescription" rows="2"></textarea>
+
+        <div style="margin-top:0.75rem; display:flex; gap:0.5rem;">
+          <button type="submit" class="btn btn-primary">Save Product</button>
+          <button type="button" id="newProduct" class="btn btn-secondary">New</button>
+        </div>
+      </form>
+
+      <h3 style="margin-top:1.5rem;">Existing Products</h3>
+      <div id="productList"></div>
+    </div>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
